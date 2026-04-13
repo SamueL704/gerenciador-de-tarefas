@@ -1,4 +1,4 @@
-from src.repositories.repository import *
+from src.repositories.task_repository import *
 
 def format_task(task):
     task["_id"] = str(task["_id"])
@@ -10,5 +10,18 @@ def create_task_service(task):
 
 def get_all_tasks_service():
     tasks = get_all_tasks()
-    print(get_all_tasks())
     return [format_task(task) for task in tasks]
+
+def get_task_by_id_service(id_task):
+    try:
+        task = get_task_by_id(id_task)
+    except:
+        return {"erro: id inválido"}
+    
+    if not task:
+        return {"erro": "tarefa não encontrada"}
+
+    return format_task(task)
+
+def update_task_service(id_task):
+    pass

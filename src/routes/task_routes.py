@@ -11,3 +11,11 @@ def create_task(task_dict: Task):
 @router.get("/tasks")
 def get_all_tasks():
     return get_all_tasks_service()
+
+@router.get("/tasks/{id_task}")
+def get_task_by_id(id_task):
+    return get_task_by_id_service(id_task)
+
+@router.patch("/tasks/{id_task}")
+def update_task(id_task):
+    pass
