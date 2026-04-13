@@ -1,2 +1,0 @@
-from src.repositories.repository import *
-
