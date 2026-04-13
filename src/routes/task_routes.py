@@ -7,3 +7,7 @@ router = APIRouter()
 @router.post("/tasks")
 def create_task(task_dict: Task):
     return create_task_service(task_dict)
+
+@router.get("/tasks")
+def get_all_tasks():
+    return get_all_tasks_service()
