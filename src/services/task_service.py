@@ -23,5 +23,14 @@ def get_task_by_id_service(id_task):
 
     return format_task(task)
 
-def update_task_service(id_task):
-    pass
+def update_task_service(id_task, data_dict):
+    try:
+        result = update_task(id_task, data_dict.model.dump())
+        
+        if result.matched_count == 0:
+            return {"erro": "tarefa não encontrada"}
+    
+    except Exception as e:
+        return {"erro": str(e)}
+
+    return {"message": "terefa criada"}

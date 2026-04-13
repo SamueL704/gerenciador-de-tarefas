@@ -9,3 +9,9 @@ def get_all_tasks():
 
 def get_task_by_id(id_task):
     return task_collection.find_one({"_id": ObjectId(id_task)})
+
+def update_task(id_task, data_dict):
+    return task_collection.update_one(
+        {"_id": ObjectId(id_task)}, 
+        {"$set": data_dict}
+    )

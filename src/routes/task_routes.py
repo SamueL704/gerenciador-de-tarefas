@@ -17,5 +17,5 @@ def get_task_by_id(id_task):
     return get_task_by_id_service(id_task)
 
 @router.patch("/tasks/{id_task}")
-def update_task(id_task):
-    pass
+def update_task(id_task, data_dict):
+    return update_task_service(id_task, data_dict)
