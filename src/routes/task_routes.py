@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from src.schemas.taskDTO import Task
+from src.schemas.taskDTO import Task, Task_update
 from src.services.task_service import *
 
 router = APIRouter()
@@ -17,5 +17,5 @@ def get_task_by_id(id_task):
     return get_task_by_id_service(id_task)
 
 @router.patch("/tasks/{id_task}")
-def update_task(id_task, data_dict):
+def update_task(id_task, data_dict: Task_update):
     return update_task_service(id_task, data_dict)

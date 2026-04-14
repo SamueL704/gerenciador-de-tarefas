@@ -25,7 +25,11 @@ def get_task_by_id_service(id_task):
 
 def update_task_service(id_task, data_dict):
     try:
-        result = update_task(id_task, data_dict.model.dump())
+        data = data_dict.model_dump(exclude_unset=True)
+        if not data:
+            return {"Nenhum dado inserido"}
+        
+        result = update_task(id_task, data)
         
         if result.matched_count == 0:
             return {"erro": "tarefa não encontrada"}
@@ -33,4 +37,4 @@ def update_task_service(id_task, data_dict):
     except Exception as e:
         return {"erro": str(e)}
 
-    return {"message": "terefa criada"}
+    return {"message": "terefa atualizada"}

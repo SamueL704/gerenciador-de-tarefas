@@ -16,3 +16,10 @@ class Task(BaseModel):
     prioridade: TaskPrioridade
     status: TaskStatus
     vencimento: str
+    
+class Task_update(BaseModel):
+    Titulo: str | None = None
+    prioridade: TaskPrioridade | None = None
+    status: TaskStatus | None = None
+    vencimento: str | None = None
+    
