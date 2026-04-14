@@ -15,3 +15,6 @@ def update_task(id_task, data):
         {"_id": ObjectId(id_task)}, 
         {"$set": data}
     )
+    
+def delete_task(id_task):
+    return task_collection.delete_one({"_id": ObjectId(id_task)})

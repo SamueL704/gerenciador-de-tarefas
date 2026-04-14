@@ -19,3 +19,7 @@ def get_task_by_id(id_task):
 @router.patch("/tasks/{id_task}")
 def update_task(id_task, data_dict: Task_update):
     return update_task_service(id_task, data_dict)
+
+@router.delete("/task/{id_task}")
+def delete_task(id_task):
+    return delete_task_service(id_task)

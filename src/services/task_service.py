@@ -38,3 +38,7 @@ def update_task_service(id_task, data_dict):
         return {"erro": str(e)}
 
     return {"message": "terefa atualizada"}
+
+def delete_task_service(id_task):
+    result = delete_task(id_task)
+    return {"message": "tarefa excluida"}
