@@ -7,7 +7,7 @@ load_dotenv()
 MONGO_URL = "mongodb://localhost:27018"
 
 
-client = MongoClient(os.getenv("MONGO_ONLINE"))
+client = MongoClient(MONGO_URL)
 
 db = client["Tarefas"]
 
